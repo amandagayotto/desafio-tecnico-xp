@@ -5,7 +5,6 @@ const getAssetById = async (id) => {
         attributes: ['id', 'code', 'quantity', 'value' ],
         where: { id },
     });
-    console.log('service', asset);
 
     if (!asset) {
        return false;
@@ -14,4 +13,18 @@ const getAssetById = async (id) => {
     return asset;
 };
 
-module.exports = { getAssetById };
+const getAssetsByClient = async (id) => {
+    const client = await Operation.findOne({ 
+        attributes: ['clientId', 'assetId', 'quantity'],
+        include: [{ model: BrokerAsset, as: 'asset', attributes: ['value'] }],
+        where: { clientId: id }
+    });
+
+    if (client.dataValues === undefined) {
+       return false;
+    }
+
+    return client;
+};
+
+module.exports = { getAssetById, getAssetsByClient };
