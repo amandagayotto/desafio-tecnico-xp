@@ -18,4 +18,11 @@ router.post('/withdraw', async (req, res) => {
     return res.status(201).json(account);
 });
 
+router.post('/deposit', async (req, res) => {
+    const { clientId, value } = req.body;
+    const account = await accountService.makeDeposit(clientId, value);
+
+    return res.status(201).json(account);
+});
+
 module.exports = router;
