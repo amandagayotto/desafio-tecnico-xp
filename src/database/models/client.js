@@ -9,6 +9,13 @@ const ClientSchema = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
   }, { timestamps: false });
 
+  ClientTable.associate = models => {
+    ClientTable.hasOne(models.Account, {
+      foreignKey: 'clientId',
+      as: 'account'
+    });
+  };
+
   return ClientTable;
 }
 
