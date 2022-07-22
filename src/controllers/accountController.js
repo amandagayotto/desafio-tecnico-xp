@@ -11,4 +11,11 @@ router.get('/:id', async (req, res) => {
     return res.status(200).json(client);
 });
 
+router.post('/withdraw', async (req, res) => {
+    const { clientId, value } = req.body;
+    const account = await accountService.makeWithdraw(clientId, value);
+
+    return res.status(201).json(account);
+});
+
 module.exports = router;
