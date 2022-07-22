@@ -14,6 +14,10 @@ const ClientSchema = (sequelize, DataTypes) => {
       foreignKey: 'clientId',
       as: 'account'
     });
+    ClientTable.hasOne(models.Operation, {
+      foreignKey: 'clientId',
+      as: 'operation'
+    });
   };
 
   return ClientTable;

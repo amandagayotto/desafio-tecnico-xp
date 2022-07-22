@@ -10,6 +10,13 @@ const BrokerAssetSchema = (sequelize, DataTypes) => {
     value: DataTypes.DECIMAL,
   }, { timestamps: false });
 
+  BrokerAssetTable.associate = models => {
+    BrokerAssetTable.hasOne(models.Operation, {
+      foreignKey: 'assetId',
+      as: 'operation'
+    });
+  };
+
   return BrokerAssetTable;
 }
 
