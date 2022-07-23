@@ -1,4 +1,5 @@
 const express = require('express');
+const validateAccount = require('../middlewares/validateAccount');
 
 const router = express.Router();
 
@@ -11,18 +12,19 @@ router.get('/:id', async (req, res) => {
     return res.status(200).json(client);
 });
 
-router.post('/withdraw', async (req, res) => {
+router.post('/withdraw', validateAccount, async (req, res) => {
     const { clientId, value } = req.body;
     const account = await accountService.makeWithdraw(clientId, value);
 
-    return res.status(201).json(account);
+    return res.status(201).json({ message: 'Withdraw has been completed' });
 });
 
-router.post('/deposit', async (req, res) => {
+router.post('/deposit', validateAccount, async (req, res) => {
     const { clientId, value } = req.body;
     const account = await accountService.makeDeposit(clientId, value);
+    console.log(account);
 
-    return res.status(201).json(account);
+    return res.status(201).json({ message: 'Deposit has been completed' });
 });
 
 module.exports = router;
