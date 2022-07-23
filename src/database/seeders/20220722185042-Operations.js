@@ -7,7 +7,7 @@ module.exports = {
       assetId: 3,
       quantity: 10,
       buy: true,
-      sale: false,
+      sell: false,
       createdAt: new Date()
     },
     {
@@ -16,7 +16,7 @@ module.exports = {
       assetId: 5,
       quantity: 100,
       buy: true,
-      sale: false,
+      sell: false,
       createdAt: new Date()
     },
     {
@@ -25,7 +25,7 @@ module.exports = {
       assetId: 2,
       quantity: 8,
       buy: true,
-      sale: false,
+      sell: false,
       createdAt: new Date()
     },
     {
@@ -34,7 +34,7 @@ module.exports = {
       assetId: 3,
       quantity: 5,
       buy: false,
-      sale: true,
+      sell: true,
       createdAt: new Date()
     },
     {
@@ -43,7 +43,7 @@ module.exports = {
       assetId: 5,
       quantity: 10,
       buy: false,
-      sale: true,
+      sell: true,
       createdAt: new Date()
     },
     {
@@ -52,7 +52,7 @@ module.exports = {
       assetId: 2,
       quantity: 2,
       buy: false,
-      sale: true,
+      sell: true,
       createdAt: new Date()
     },
     {
@@ -61,7 +61,7 @@ module.exports = {
       assetId: 1,
       quantity: 10,
       buy: true,
-      sale: false,
+      sell: false,
       createdAt: new Date()
     }
     ], { timestamps: false });

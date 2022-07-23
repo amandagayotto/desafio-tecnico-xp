@@ -15,7 +15,7 @@ const OperationSchema = (sequelize, DataTypes) => {
     },
     quantity: DataTypes.INTEGER,
     buy: DataTypes.BOOLEAN,
-    sale: DataTypes.BOOLEAN,
+    sell: DataTypes.BOOLEAN,
     createdAt: DataTypes.DATE,
   }, { timestamps: false });
 

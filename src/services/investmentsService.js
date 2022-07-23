@@ -24,7 +24,7 @@ const buyAsset = async (clientId, assetId, quantity) => {
         assetId: asset.id, 
         quantity: quantity,
         buy: true,
-        sale: false
+        sell: false
     }); 
  
     await Client.update({ balance: Number(client.balance) - (Number(asset.value) * Number(quantity)) }, 

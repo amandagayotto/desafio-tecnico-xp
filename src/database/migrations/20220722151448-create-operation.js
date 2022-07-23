@@ -27,7 +27,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN
       },
-      sale: {
+      sell: {
         allowNull: false,
         type: Sequelize.BOOLEAN
       },
