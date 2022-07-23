@@ -7,9 +7,8 @@ const getAssetById = async (id) => {
     });
 
     if (!asset) {
-       return false;
+        throw { status: 404, message: 'Asset does not exist' };
     }
-
     return asset;
 };
 
@@ -21,9 +20,8 @@ const getAssetsByClient = async (id) => {
     });
 
     if (client.dataValues === undefined) {
-       return false;
+        throw { status: 404, message: 'Client does not exist' };
     }
-
     return client;
 };
 

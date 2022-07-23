@@ -7,9 +7,8 @@ const getAccountByClientId = async (id) => {
     });
     
     if (!account) {
-       return ({ message: 'Client not found' });
+        throw { status: 404, message: 'Client not found' };
     }
-
     return account;
 };
 
@@ -31,8 +30,7 @@ const makeWithdraw = async (clientId, value) => {
     });
         return account;
     }
-
-    return ({ message: 'Client not found' });
+    throw { status: 404, message: 'Client not found' };
 };
 
 const makeDeposit= async (clientId,value) => {
@@ -53,8 +51,7 @@ const makeDeposit= async (clientId,value) => {
     });
         return account;
     }
-
-    return ({ message: 'Client not found' });
+    throw { status: 404, message: 'Client not found' };
 };
 
 module.exports = { getAccountByClientId, makeWithdraw, makeDeposit };
