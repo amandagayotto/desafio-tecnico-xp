@@ -2,23 +2,22 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Accounts', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
       clientId: {
+        primaryKey: true,
         type: Sequelize.INTEGER,
         references: {
           model: 'Clients',
-          key: 'id',
+          key: 'clientId',
         },
         onDelete: 'CASCADE',
       },
-      balance: {
+      assetId: {
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      quantity: {
         allowNull: false,
-        type: Sequelize.DECIMAL(10, 2)
+        type: Sequelize.INTEGER
       }
     });
   },
