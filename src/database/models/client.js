@@ -1,12 +1,13 @@
 const ClientSchema = (sequelize, DataTypes) => {
   const ClientTable = sequelize.define("Client", {
-    id: {
+    clientId: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
     name: DataTypes.STRING,
     password: DataTypes.STRING,
+    balance: DataTypes.DECIMAL(10, 2)
   }, { timestamps: false });
 
   ClientTable.associate = models => {
