@@ -14,15 +14,14 @@ router.get('/:id', async (req, res) => {
 
 router.post('/withdraw', validateAccount, async (req, res) => {
     const { clientId, value } = req.body;
-    const account = await accountService.makeWithdraw(clientId, value);
+    await accountService.makeWithdraw(clientId, value);
 
     return res.status(201).json({ message: 'Withdraw has been completed' });
 });
 
 router.post('/deposit', validateAccount, async (req, res) => {
     const { clientId, value } = req.body;
-    const account = await accountService.makeDeposit(clientId, value);
-    console.log(account);
+    await accountService.makeDeposit(clientId, value);
 
     return res.status(201).json({ message: 'Deposit has been completed' });
 });
