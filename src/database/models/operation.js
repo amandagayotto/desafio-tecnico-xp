@@ -21,13 +21,13 @@ const OperationSchema = (sequelize, DataTypes) => {
 
   OperationTable.associate = models => {
     OperationTable.hasOne(models.Client, {
-      foreignKey: 'id',
+      foreignKey: 'clientId',
       as: 'client'
     });
     OperationTable.hasOne(models.BrokerAsset, {
       foreignKey: 'id',
       as: 'asset'
-    })
+    });
   };
 
   return OperationTable;

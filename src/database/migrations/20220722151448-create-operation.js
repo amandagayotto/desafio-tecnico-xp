@@ -12,17 +12,12 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Clients',
-          key: 'id',
+          key: 'clientId',
         },
         onDelete: 'CASCADE',
       },
       assetId: {
         type: Sequelize.INTEGER,
-        references: {
-          model: 'BrokerAssets',
-          key: 'id',
-        },
-        onDelete: 'CASCADE',
       },
       quantity: {
         allowNull: false,
@@ -37,9 +32,9 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {

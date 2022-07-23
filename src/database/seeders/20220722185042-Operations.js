@@ -8,7 +8,7 @@ module.exports = {
       quantity: 10,
       buy: true,
       sale: false,
-      createdAt: new Date('2011-08-01T19:58:00.000Z')
+      createdAt: new Date()
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ module.exports = {
       quantity: 100,
       buy: true,
       sale: false,
-      createdAt: new Date('2011-08-01T19:58:00.000Z')
+      createdAt: new Date()
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ module.exports = {
       quantity: 8,
       buy: true,
       sale: false,
-      createdAt: new Date('2011-08-01T19:58:00.000Z')
+      createdAt: new Date()
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ module.exports = {
       quantity: 5,
       buy: false,
       sale: true,
-      createdAt: new Date('2012-08-01T19:58:00.000Z')
+      createdAt: new Date()
     },
     {
       id: 5,
@@ -44,7 +44,7 @@ module.exports = {
       quantity: 10,
       buy: false,
       sale: true,
-      createdAt: new Date('2013-08-01T19:58:00.000Z')
+      createdAt: new Date()
     },
     {
       id: 6,
@@ -53,7 +53,7 @@ module.exports = {
       quantity: 2,
       buy: false,
       sale: true,
-      createdAt: new Date('2011-12-01T19:58:00.000Z')
+      createdAt: new Date()
     },
     {
       id: 7,
@@ -62,7 +62,7 @@ module.exports = {
       quantity: 10,
       buy: true,
       sale: false,
-      createdAt: new Date('2012-05-12T19:58:00.000Z')
+      createdAt: new Date()
     }
     ], { timestamps: false });
   },
