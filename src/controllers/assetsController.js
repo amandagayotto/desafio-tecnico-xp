@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const assetService = require('../services/assetService');
+const assetService = require('../services/assetsService');
 
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
