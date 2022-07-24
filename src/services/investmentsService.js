@@ -94,6 +94,15 @@ const sellAsset = async (clientId, assetId, quantity) => {
         await Account.update({ quantity: Number(account.dataValues.quantity) - Number(quantity) }, 
         { where: { clientId: clientId, assetId: assetId } });
     }
+
+    const quantityAsset = await Account.findOne({ 
+        attributes: ['clientId', 'assetId', 'quantity'],
+        where: { clientId: clientId, assetId: assetId }
+    });
+
+    if (quantityAsset.quantity <= 0) {
+        await Account.destroy({ where: { clientId: clientId, assetId: assetId } }); 
+    }
 };
 
 module.exports = { buyAsset, sellAsset };
