@@ -23,7 +23,7 @@ const makeWithdraw = async (clientId, value) => {
     }
 
     if (client.dataValues.balance < value) {
-        throw { status: 404, message: 'Unable to complete your transaction' };
+        throw { status: 404, message: 'This operation is not possible' };
     }
 
     const updateAccount = await Client.update(
