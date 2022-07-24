@@ -26,8 +26,9 @@ const makeWithdraw = async (clientId, value) => {
         throw { status: 404, message: 'This operation is not possible' };
     }
 
-    const updateAccount = await Client.update(
-        { balance: Number(client.dataValues.balance) - Number(value) },
+    const valueWithdraw = (Number(client.dataValues.balance) - Number(value));
+    await Client.update(
+        { balance: valueWithdraw },
         { where: { clientId } })
 };
 
@@ -41,8 +42,9 @@ const makeDeposit= async (clientId ,value) => {
         throw { status: 404, message: 'Client not found' };
     }
 
-    const updateAccount = await Client.update(
-        { balance: Number(client.dataValues.balance) + Number(value) },
+    const valueDeposit = (Number(client.dataValues.balance) + Number(value));
+    await Client.update(
+        { balance: valueDeposit },
         { where: { clientId } })
 };
 
