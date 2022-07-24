@@ -1,9 +1,9 @@
 const express = require('express');
-const validateAccount = require('../middlewares/validateAccount');
 
 const router = express.Router();
 
 const accountService = require('../services/accountService');
+const validateAccount = require('../middlewares/validateAccount');
 
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
