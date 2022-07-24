@@ -6,6 +6,7 @@ const ClientSchema = (sequelize, DataTypes) => {
       primaryKey: true
     },
     name: DataTypes.STRING,
+    email: DataTypes.STRING,
     password: DataTypes.STRING,
     balance: DataTypes.DECIMAL(10, 2)
   }, { timestamps: false });
