@@ -1,4 +1,4 @@
-const { BrokerAsset, Operation } = require('../database/models');
+const { BrokerAsset, Account } = require('../database/models');
 
 const getAssetById = async (id) => {
     const asset = await BrokerAsset.findOne({ 
@@ -13,13 +13,12 @@ const getAssetById = async (id) => {
 };
 
 const getAssetsByClient = async (id) => {
-    const client = await Operation.findOne({ 
-        attributes: ['clientId', 'assetId', 'quantity'],
-        include: [{ model: BrokerAsset, as: 'asset', attributes: ['value'] }],
-        where: { clientId: id }
+    const client = await Account.findAll({ 
+        where: { clientId: id },
+        include: [{ model: BrokerAsset, as: 'asset', attributes: ['value'] }]
     });
 
-    if (client.dataValues === undefined) {
+    if (client.length === 0) {
         throw { status: 404, message: 'Client does not exist' };
     }
     return client;
