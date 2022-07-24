@@ -20,7 +20,7 @@ app.use('/account', accountController);
 app.use('/login', loginController);
 app.use(errorHandler);
 
-const port = 3008;
+const port = process.env.API_PORT;
 app.listen(port, () => console.log('ouvindo porta', port));
 
 module.exports = app;
