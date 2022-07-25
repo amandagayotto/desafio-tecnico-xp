@@ -44,10 +44,10 @@ A partir daqui você pode rodar o container via CLI ou abri-lo no VS Code
 5.Instalar as dependências
 * Usar o comando: npm install
 
-6.Para iniciar a aplicação
+6.Iniciar a aplicação
 * Usar o comando: npm start
 
-7.Para montar o banco de dados
+7.Montar o banco de dados
 * Usar o comando: npm run create
 * E depois usar o comando: npm run seed
 
@@ -59,7 +59,10 @@ A partir daqui você pode rodar o container via CLI ou abri-lo no VS Code
 * Depois usar o comando: npm run create
 * E depois usar o comando: npm run seed
 
-10.Para verificar erros de eslint
+10.Verificação da API
+* Para verificar as chamadas da API e suas respostas podem ser utilizadas algumas plataformas como o Postman, Insomnia ou o Thunder Client que é uma extensão do VS Code
+
+11.Para verificar erros de eslint
 * Usar o comando: npm run lint
 
 ## 📦 Desenvolvimento do projeto
