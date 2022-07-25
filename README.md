@@ -31,8 +31,7 @@ Essas instruções permitirão que você obtenha uma cópia do projeto na sua m�
 * git clone https://github.com/amandagayotto/desafio-tecnico-xp
 
 2.Verificar a branch
-* Entrar na branch amandagayotto-desafio-xp
-* Fazer pull dessa branch
+* Fazer pull da branch 'main'
 
 3.Rodando com Docker
 * Usar o comando: docker-compose -f "docker-compose.yml" up -d --build
